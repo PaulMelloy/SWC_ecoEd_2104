@@ -43,9 +43,22 @@ surveys %>%
           weight_lb = weight * 2.2) %>%
    select(weight_kg, weight_lb)
 
-# summarise function
+
+# summarise() function
+# we can use the function group_by() to break-up the data
+#  and summarise by categories
 surveys %>%
    group_by(sex) %>%
    summarise(mean_weight = mean(weight, na.rm = TRUE))
 
+
+
+# Replacing values in a vector
+ gsub(pattern = "Cracticus tibicen", 
+      replacement = "new_name",
+      x = ala_data)
+ 
+ gsub(pattern = "M", 
+      replacement = "Male",
+      x = surveys$sex)
  
